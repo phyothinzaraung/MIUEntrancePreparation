@@ -4,13 +4,14 @@ public class SumSafe {
         int sum = 0;
         boolean isSumSafe = true;
 
-        for(int i=0; i<a.length; i++){
-            sum += a[i];
+        for (int k : a) {
+            sum += k;
         }
 
-        for(int i=0; i<a.length; i++){
-            if(sum == a[i]){
+        for (int j : a) {
+            if (sum == j) {
                 isSumSafe = false;
+                break;
             }
         }
 
