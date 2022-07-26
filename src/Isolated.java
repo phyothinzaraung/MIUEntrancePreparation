@@ -9,47 +9,20 @@ public class Isolated {
             return -1;
         }
 
-        long square = n*n;
+        long square = n * n;
         long cube = n*n*n;
-        boolean isIsolated = true;
 
-        ArrayList<Integer> squareArr = new ArrayList<>();
-        ArrayList<Integer> cubeArr = new ArrayList<>();
-
-        for(int i=0; i< String.valueOf(square).length(); i++){
-            int modulus = (int) (square % 10);
-            if(modulus == squareArr.get(i)){
-                squareArr.add(modulus);
+        String squareStr = String.valueOf(square);
+        while (cube !=0){
+            if(squareStr.contains(String.valueOf(cube %10))){
+                return 0;
             }
+            cube = cube / 10;
         }
-
-        for(int i=0; i< String.valueOf(cube).length(); i++){
-            int modulus = (int) (cube%10);
-            if(modulus == cubeArr.get(i)){
-                cubeArr.add(modulus);
-            }
-        }
-
-        System.out.println(squareArr);
-        System.out.println(cubeArr);
-
-        for(int i=0; i<squareArr.size(); i++){
-            for(int j=0; j<cubeArr.size(); j++){
-                if(squareArr.get(i) == cubeArr.get(j)){
-                    isIsolated = false;
-                    break;
-                }
-            }
-        }
-
-        if(isIsolated){
-            return 1;
-        }else {
-            return 0;
-        }
+        return 1;
     }
 
     public static void main(String[] args) {
-        System.out.println("Result is " + isIsolated(163));
+        System.out.println("Result is " + isIsolated(162));
     }
 }
