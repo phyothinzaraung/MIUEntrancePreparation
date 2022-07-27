@@ -1,42 +1,48 @@
 public class MinMaxDisjoint {
 
-    static int isMinMaxDisjoint(int[ ] a){
+    static int isMinMaxDisjoint(int[] a){
 
         if(a.length < 3) return 0;
 
-        int min = a[0], max = a[0];
-        int minCount = 0;
-        int maxCount = 0;
-        int minIndex = 0;
-        int maxIndex = 0;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        int minIndex=0;
+        int maxIndex=0;
+        int minCount=1;
+        int maxCount=1;
 
         for(int i=0; i<a.length; i++){
-            if(a[i] < min){
-                min = a[i];
-                minCount = 1;
-                minIndex = i;
-            }
-            if(a[i] > max){
-                max = a[i];
-                maxCount = 1;
-                maxIndex = i;
-            }
 
             if(a[i] == min){
                 minCount++;
-            } else if(a[i] == max){
+            } else if (a[i] == max) {
                 maxCount++;
+            }
+
+            if(a[i] < min){
+                min = a[i];
+                minIndex = i;
+                minCount = 1;
+            }
+
+            if(a[i] > max){
+                max = a[i];
+                maxIndex = i;
+                maxCount = 1;
             }
         }
 
-        System.out.println(min + "-" + minCount);
-        System.out.println(max + "-" + maxCount);
+        System.out.println(min);
+        System.out.println(max);
+        System.out.println("MINCount"+ minCount);
+        System.out.println("MaxCount"+ maxCount);
+        System.out.println("MinIndex" +minIndex);
+        System.out.println("MaxIndex" + maxIndex);
 
-
-        if(min == max || minCount > 1 || maxCount>1){
-            return 0;
-        }else {
+        if (minCount == 1 && maxCount == 1 && ((minIndex - maxIndex) < -1 || (minIndex - maxIndex) > 1)) {
             return 1;
+        } else {
+            return 0;
         }
     }
 
