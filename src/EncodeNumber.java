@@ -22,6 +22,18 @@ public class EncodeNumber {
 
         System.out.println(encodeNumberList);
 
+        ArrayList<Integer> resultArr = new ArrayList<>();
+
+        for(int i=0; i<encodeNumberList.size(); ){
+            if(n % encodeNumberList.get(i) == 0){
+                resultArr.add(encodeNumberList.get(i));
+                n = n / encodeNumberList.get(i);
+            }else {
+                i++;
+            }
+        }
+        System.out.println(resultArr);
+
         return convertIntegers(encodeNumberList);
     }
 
