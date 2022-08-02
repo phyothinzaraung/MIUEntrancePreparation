@@ -17,24 +17,20 @@ public class LargestDifferenceOfEven {
 
         if(evenArr.size() < 2) return -1;
 
-
         int largest = evenArr.get(0), smallest = evenArr.get(0);
         for(int i=1; i<evenArr.size(); i++){
-            if(a[i] > largest){
-                largest = a[i];
+            if(evenArr.get(i) > largest){
+                largest = evenArr.get(i);
             }
-            if(a[i] < largest) {
-                smallest = a[i];
+            if(evenArr.get(i) < smallest){
+                smallest = evenArr.get(i);
             }
         }
-
-        System.out.println(largest);
-        System.out.println(smallest);
 
         return largest - smallest;
     }
 
     public static void main(String[] args) {
-        System.out.println("Result: " + largestDifferenceOfEvens(new int[]{1, 2, 1, 2, 1, 4, 1, 6, 4}));
+        System.out.println("Result: " + largestDifferenceOfEvens(new int[]{ 2, 2, 2, 2}));
     }
 }
