@@ -26,10 +26,30 @@ public class PrimeCount {
         return result;
     }
 
+    static boolean isPrime(int n){
+        for(int i=2; i<n; i++){
+            if(n%i == 0) return false;
+        }
+        return true;
+    }
+
+    static int calculatePrimeCount(int start, int end){
+        if(start > end) return 0;
+        if(start < 2) start = 2;
+        int count = 0;
+        for(int i=start; i<=end; i++){
+            if(isPrime(i)){
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args){
 
-        int primeCount = primeCount(10, 30);
+        int primeCount = primeCount(-10, 6);
         System.out.println("Prime Count " + primeCount);
+        System.out.println("Result: " + calculatePrimeCount(-10, 6));
     }
 }
 
