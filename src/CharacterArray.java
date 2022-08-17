@@ -26,7 +26,9 @@ public class CharacterArray {
     }
 
     public static void main(String[] args) {
-        System.out.println(charArr(new char[]{'a', 'b', 'c'}, -1, 1));
+
+        //System.out.println(charArr(new char[]{'a', 'b', 'c'}, -1, 1));
+        System.out.println(charArr(new char[]{'a', 'b', 'c'},1, 2 ));
     }
 
 }
