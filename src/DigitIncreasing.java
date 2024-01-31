@@ -7,7 +7,7 @@ public class DigitIncreasing {
             if(n%i==0){
                 StringBuilder stringBuilder = new StringBuilder();
                 int sum = 0;
-                for(int j=0; j<9; j++){
+                for(int j=1; j<9; j++){
                     stringBuilder.append(i);
                     sum += Integer.parseInt(String.valueOf(stringBuilder));
 

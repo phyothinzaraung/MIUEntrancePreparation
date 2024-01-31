@@ -23,12 +23,12 @@ public class ZeroPlentiful {
             return 0;
         }
 
-        plentyCount += zeroCount/4;
+        //plentyCount += zeroCount/4;
 
         return plentyCount;
     }
 
     public static void main(String[] args) {
-        System.out.println("Result: " + isZeroPlentiful(new int[]{}));
+        System.out.println("Result: " + isZeroPlentiful(new int[]{1, 2, 0, 0, 0, 0, 2, -18, 0, 0, 0, 0, 0, 12}));
     }
 }

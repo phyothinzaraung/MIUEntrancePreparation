@@ -23,6 +23,6 @@ public class Vesuvian {
     }
 
     public static void main(String[] args) {
-        System.out.println("Result: " + isVesuvian(55));
+        System.out.println("Result: " + isVesuvian(50));
     }
 }

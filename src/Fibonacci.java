@@ -44,7 +44,7 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println("Result: " + closestFibonacci(36));
+        System.out.println("Result: " + closestFibonacci(34));
         System.out.println("Is Fibonacci: " + isFibonacci(15));
     }
 }

@@ -20,12 +20,15 @@ public class EncodeArray {
             resultArr.add(-1);
         }
 
+        System.out.println(numArr);
+
         for(int i=0; i<numArr.size(); i++){
             for(int j=0; j<numArr.get(i); j++){
                resultArr.add(0);
             }
             resultArr.add(1);
         }
+
 
         int[] result = new int[resultArr.size()];
         for(int i=0; i<resultArr.size(); i++){
@@ -37,8 +40,8 @@ public class EncodeArray {
 
     public static void main(String[] args) {
         System.out.println(encodeArray(1001));
-        System.out.println(encodeArray(999));
-        System.out.println(encodeArray(-1));
-        System.out.println(1);
+//        System.out.println(encodeArray(999));
+//        System.out.println(encodeArray(-1));
+//        System.out.println(1);
     }
 }
